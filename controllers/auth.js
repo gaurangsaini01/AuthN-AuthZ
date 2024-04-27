@@ -25,11 +25,9 @@ async function login(req, res) {
       role:user.role
     }
     const token = jwt.sign(payload,process.env.JWT_SECRET,{expiresIn:'2h'});
-    user.token = token;
-    user.password = undefined;
-    res.cookie('cookieHuBhai',token,user).status(200).json({
-      user,
-      token, 
+    // user.token = token;
+    // user.password = undefined;
+    res.cookie('token',token,user).status(200).json({
       success:true,
       message:'LoggedIn Successfully'
     })

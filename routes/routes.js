@@ -19,7 +19,7 @@ router.get('/student',auth,isStudent,(req,res)=>{
         message:'Student Dashboard access'
     })
 })
-router.get('/test',auth,isAdmin,(req,res)=>{
+router.get('/admin',auth,isAdmin,(req,res)=>{
     res.status(200).json({
         success:true,
         message:'Admin Dashboard access'
